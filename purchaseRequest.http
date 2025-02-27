@@ -1,0 +1,3 @@
+### GET for non-user
+GET http://localhost:8080/purchase?productId=19
+Content-Type: application/json
