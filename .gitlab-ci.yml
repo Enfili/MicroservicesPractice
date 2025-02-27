@@ -3,6 +3,6 @@ stages:
 
 build_job:
   stage: build
-  image: gradle:sdk17
+  image: gradle:jdk17
   script:
     - gradle clean build
