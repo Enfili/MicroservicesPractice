@@ -1,7 +1,7 @@
 ### GET for non-user
-GET http://localhost:8080/purchase?productId=19
+GET http://localhost:8080/purchase?productId=1
 Content-Type: application/json
 
 ### GET for users
-GET http://localhost:8080/purchase/JP
+GET http://localhost:8080/purchase/JP?productId=1
 Content-Type: application/json

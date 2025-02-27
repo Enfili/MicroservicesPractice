@@ -7,6 +7,7 @@ import telekom.com.productservice.repository.ProductRepository;
 import telekom.com.productservice.service.ProductService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -32,5 +33,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> findAllByName(String name) {
         return productRepository.findAllByName(name);
+    }
+
+    @Override
+    public Optional<Product> findById(int id) {
+        return productRepository.findById(id);
     }
 }
