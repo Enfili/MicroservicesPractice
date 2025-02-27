@@ -21,5 +21,3 @@ build_job:
 
 sast_job:
   stage: test
-  script:
-    - run
