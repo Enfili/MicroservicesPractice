@@ -1,0 +1,17 @@
+### POST add new product
+POST http://localhost:8080/addProduct
+Content-Type: application/json
+
+{
+  "name": "Vostok",
+  "description": "First (Soviet) spacecraft with human in orbit.",
+  "price": 12.3
+}
+
+### DELETE by id
+DELETE http://localhost:8080/deleteProductById?id=4
+Content-Type: application/json
+
+### DELETE duplicates
+DELETE http://localhost:8080/deleteDuplicates?name=Vostok
+Content-Type: application/json
