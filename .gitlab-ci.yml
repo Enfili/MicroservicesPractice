@@ -6,3 +6,6 @@ build_job:
   image: gradle:jdk17
   script:
     - gradle clean build
+  artifacts:
+    paths:
+      - build/reports/tests/test/
