@@ -19,3 +19,5 @@ sast_job:
   stage: test
   include:
   - template: Security/SAST.gitlab-ci.yml
+  script:
+    - run
