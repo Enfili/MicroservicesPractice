@@ -14,13 +14,14 @@ build_job:
   artifacts:
     paths:
       - build/libs/*.jar  # Save the built JAR file for the next stage
+    expire_in: 1 day
 
 deploy_job:
   stage: deploy
   image: openjdk:17
   script:
     - echo "Deploying application."
-    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/×.jar
+    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/*.jar
   environment:
     name: dev
     url: https://microservicespractice.com/product-service
