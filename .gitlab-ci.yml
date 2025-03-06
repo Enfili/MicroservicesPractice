@@ -3,7 +3,7 @@ stages:
   - deploy
 
 variables:
-  SPRING_PROFILES_ACTIVE: "prod"
+  SPRING_PROFILES_ACTIVE: "dev"
 
 build_job:
   stage: build
