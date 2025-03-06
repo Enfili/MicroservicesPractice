@@ -21,7 +21,7 @@ deploy_job:
   image: openjdk:17
   script:
     - echo "Deploying application."
-    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/*.jar
+    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/product-service-0.0.1-SNAPSHOT.jar
   environment:
     name: dev
     url: https://microservicespractice.com/product-service
