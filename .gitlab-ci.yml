@@ -18,10 +18,12 @@ build_job:
 
 deploy_job:
   stage: deploy
-  image: openjdk:17
+  image: docker:latest
   script:
     - echo "Deploying application."
-    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/product-service-0.0.1-SNAPSHOT.jar
+    - ls -lh build/libs/
+    - nohup java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/app.jar > app.log 2>&1 &
+    - echo "Application started in the background."
   environment:
     name: dev
     url: https://microservicespractice.com/product-service
