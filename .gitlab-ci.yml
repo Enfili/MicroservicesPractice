@@ -18,7 +18,7 @@ build_job:
 
 deploy_job:
   stage: deploy
-  image: docker:latest
+  image: openjdk:17
   script:
     - echo "Deploying application."
     - ls -lh build/libs/
