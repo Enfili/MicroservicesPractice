@@ -11,11 +11,9 @@ build_job:
   script:
     - echo "Building application."
     - gradle clean build -x test # Skipping tests for now
-# I do not have any tests for now
-#  artifacts:
-#    paths:
-#      - build/reports/tests/test/
-
+  artifacts:
+    paths:
+      - build/libs/*.jar  # Save the built JAR file for the next stage
 
 deploy_job:
   stage: deploy
