@@ -1,10 +1,40 @@
 spring:
+  profiles:
+    active: local
+
+---
+# LOCAL
+spring:
+  config:
+    activate:
+      on-profile: local
   application:
     name: product-service
   datasource:
-    url: jdbc:postgresql://localhost:5433/product
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://ep-rough-boat-a2f1v6ub-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_Qu9UcNkfFe5O
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+
+---
+# DEV
+spring:
+  config:
+    activate:
+      on-profile: dev
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:postgresql://ep-rough-boat-a2f1v6ub-pooler.eu-central-1.aws.neon.tech/neondb?sslmode=require
+    username: neondb_owner
+    password: npg_Qu9UcNkfFe5O
     driver-class-name: org.postgresql.Driver
   jpa:
     properties:

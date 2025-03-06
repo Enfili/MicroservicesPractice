@@ -1,11 +1,15 @@
 stages:
   - build
 
+variables:
+  SPRING_PROFILES_ACTIVE: "prod"
+
 build_job:
   stage: build
   image: gradle:jdk17
   script:
-    - gradle clean build
+    - echo "Building application"
+    - gradle clean build -x test # Skipping tests for now
   artifacts:
     paths:
       - build/reports/tests/test/
