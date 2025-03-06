@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy
 
 variables:
   SPRING_PROFILES_ACTIVE: "prod"
@@ -8,8 +9,20 @@ build_job:
   stage: build
   image: gradle:jdk17
   script:
-    - echo "Building application"
+    - echo "Building application."
     - gradle clean build -x test # Skipping tests for now
-  artifacts:
-    paths:
-      - build/reports/tests/test/
+# I do not have any tests for now
+#  artifacts:
+#    paths:
+#      - build/reports/tests/test/
+
+
+deploy_job:
+  stage: deploy
+  image: openjdk:17
+  script:
+    - echo "Deploying application."
+    - java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/×.jar
+  environment:
+    name: dev
+    url: https://microservicespractice.com/product-service
