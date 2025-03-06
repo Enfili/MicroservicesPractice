@@ -25,6 +25,7 @@ deploy_job:
     - nohup java -Dspring.profiles.active=${SPRING_PROFILES_ACTIVE} -jar build/libs/app.jar > app.log 2>&1 &
     - echo "Application started in the background."
     - echo "URL - https://microservicespractice.com/product-service"
+    - sleep 30
     - curl -f https://microservicespractice.product-service.com/purchase || echo "Products endpoint failed"
   environment:
     name: dev
