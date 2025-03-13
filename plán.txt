@@ -1,0 +1,141 @@
+1. mohol by som v Dockeri spraviť frontend, do ktorého dám potom tie veci, kde si budú ľudia objednávať možné produkty
+	. a budeš tam mať aj prihlásenie? a registráciu?
+	
+	
+PROJEKT
+. aspoň dva mikroservisy, lepšie tri
+	> jeden bude klasika, že si kupuješ nejaký produktov
+	> druhý?
+. budeš mať databázy
+	> zoznam užívateľov (Mongo)
+	> zoznam produktov (nejaký SQL, napríklad PostgreSQL)
+. na AWS by si mohol využívať secrets managera na uchovávanie hodnôt
+. cez docker-compose by si mohol mať databázy? Respektíve spojenie s databázami.
+. skúsiš deployovať servisy cez Gitlab
+. skúsiš spraviť security na to
+	> musíš spraviť prihlásenie, registráciu
+. klasicky budeš mať:
+	> CONTROLLER:
+		~ budeš mať prístup z vonku cez requesty do hlavnej appky na nákup produktov
+		~ budeš mať na komunikáciu s ostatnými appkami
+	> SERVICE:
+		~ business logic
+		~ potrebuješ DAO a DTO?
+	> DATABASE:
+		~ 
+	> CONFIG:
+		~ databázy
+		~ servisy?
+	> DAO, DTO, MAPPERS?
+		~ asi použiješ
+	> CLIENT:
+		~ pri komunikácii medzi servismi?
+. swagger?
+
+. 1. SERVIS
+	> controller:
+		~ nákup s prihlásením
+		~ nákup bez prihlásenia
+	> service:
+		~ registrácia
+		~ spracuje sumu za nákup
+			+ prihlásený platí menej abo také dačo
+	> databáza:
+		~ postgresql: tovar
+	> config:
+		~ databázy
+		~ servisy?
+	> budeš asi potrebovať mappery a dao a dto?
+	> docker?
+	> sprav si pipelinu
+		~ aspoň takú základnú
+	> neskôr:
+		~ clientov pre ostatné servisy
+		~ swagger specs napísané z ostatných servisov
+		~ aws spojenie
+	> napíš si testy
+	> swagger?
+		~ na spojenie s druhým servisom?
+		~ načo to potrebuješ? vygenerovanie nejakých tried, ktoré ti prídu z druhého servisu?
+	> ČO ĎALEJ MUSÍŠ:
+		~ registráciu asi až neskôr, keď budeš mať 2. servis
+		~ napíš testy
+		~ config pre databázu (ak treba)
+		~ sprav pipelinu - TOTO ROBÍM
+			° sprav deploy na dev - TOTO MI ZATIAĽ NEJDE
+				+ musím si spraviť stránku - skús cez github pages
+		~ choď na druhý servis a potom dorob 1. servis
+
+. 2. SERVIS
+	> mohol by mohol držať userov v sebe
+	> mohol by mať aj nejaké "predplatné"?
+	> controller:
+		~ registrácia
+	> databáza:
+		~ mongoDB: užívatelia
+	> budeš asi potrebovať mappery a dao a dto?
+	> docker?
+	> sprav si pipelinu
+		~ aspoň takú základnú
+	> neskôr:
+		~ clientov pre ostatné servisy
+		~ swagger specs napísané z ostatných servisov
+		~ aws spojenie
+	> napíš si testy
+
+. 3. SERVIS
+	> akcie na tovary
+	> zľavy pre užívateľov, čo si objednali už viac ako za 10e
+	> môže počítať aj cenu doručovania?
+	> sprav si pipelinu
+	> neskôr:
+		~ clientov pre ostatné servisy
+		~ swagger specs napísané z ostatných servisov
+		~ aws spojenie?
+	> napíš si testy
+
+. TECHNOLÓGIE:
+	> Java
+	> SpringBoot
+	> MongoDB, PostgreSQL
+	> AWS
+	> Docker
+	> Swagger
+	> Gitlab CICD
+------------------------------
+url: https://gitlab.com/microservicespractice
+------------------------------
+
+projekt, čo si začal
+   +
+1. springboot
+	> možno aj nejaká kniha?
+2. pipelina
+-> vráť sa k tomu projektu a rob pomedzi kurzy
+3. docker
+4. kurz na javu (buchalka z udemy, ak budeš mať prístup)
+5. swagger
+6. aws
+
+Lukáš:
+. aws -> môžeš si spraviť certifikát
+. aplikuj sa všade na level II a III
+------------------------------
+
+Qiskit
+. môžeš skúsiť nakodiť aj tie procesory, či to vieš urobiť (partial trace v qiskite existuje)
+. môžeš nakodiť PSAR (aj so svojim šumom - je tam zrejme aj depolarizing error)
+. môžeš nakodiť aj virtuálny qudit aj VMC implementáciu PSARu
+. vieš vytvoriť aj ten matematický formalizmus cez kvantové hrebene?
+
+. chsh (???)
+. qaoa (???)
+. prípande nejaký ML (???)
+
+--------------------------------
+dobrý kurz na python od ibm: https://www.coursera.org/professional-certificates/ibm-backend-development?utm_medium=sem&utm_source=gg&utm_campaign=b2c_emea_ibm-backend-development_ibm_ftcof_professional-certificates_arte_march_24_dr_geo-multi-set1_sem_rsa_gads_lg-all&campaignid=21095766628&adgroupid=159941489419&device=c&keyword=backend%20development%20course&matchtype=b&network=g&devicemodel=&creativeid=693331274072&assetgroupid=&targetid=kwd-298569765999&extensionid=&placement=&gad_source=1&gclid=CjwKCAiA-ty8BhA_EiwAkyoa33rybG8ZCRGaVbeVYvUcOW8Q1R79qEe84EStP5WntwtJyJt7_xkwbxoCPfQQAvD_BwE
+--------------------------------
+
+1. Java
+2. SpringBoot
+3. pom-commisions
