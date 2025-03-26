@@ -26,7 +26,7 @@ deploy_job:
     - echo "Application started in the background."
     - echo "URL - https://productservice.carrd.co"
     - sleep 30
-    - curl -f https://microservicespractice.product-service.com/purchase || echo "Products endpoint failed"
+    - curl -f https://productservice.carrd.co/purchase || echo "Products endpoint failed"
   environment:
     name: dev
     url: https://productservice.carrd.co
