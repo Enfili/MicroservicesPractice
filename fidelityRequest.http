@@ -1,0 +1,13 @@
+### POST add new user
+POST http://localhost:8082/fidelity/addUser
+Content-Type: application/json
+
+{
+  "id": 12313,
+  "name": "registered3",
+  "moneySpent": 0
+}
+
+### PUT update spent money
+PUT http://localhost:8082/fidelity/updateSpentMoney?userId=123&productPrice=15.0
+Content-Type: application/json
