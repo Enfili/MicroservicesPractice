@@ -1,0 +1,28 @@
+### GET user
+GET localhost:8081/user/getUser?name=registered
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZWdpc3RlcmVkIiwiaWF0IjoxNzQ2MDE1MzkzLCJleHAiOjE3NDYwMTg5OTN9._eCBCTdOIt6Dqwj6IxwnfM-tMtS_MCENsHbbTweHC9s
+
+### POST register
+POST localhost:8081/user/register
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "registered2",
+  "email": "reg@user.com",
+  "password": "password",
+  "moneySpent": 0
+}
+
+### POST register already registered user
+POST localhost:8081/user/register
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "registered",
+  "email": "different@user.com",
+  "password": "passsssss",
+  "moneySpent": 0
+}
