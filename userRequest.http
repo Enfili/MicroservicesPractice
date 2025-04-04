@@ -1,0 +1,27 @@
+### GET user
+GET localhost:8081/user/getUser?name=registered
+Content-Type: application/json
+
+### POST register
+POST localhost:8081/user/register
+Content-Type: application/json
+
+{
+  "id": 1237,
+  "name": "registered7",
+  "email": "reg@user.com",
+  "password": "password",
+  "moneySpent": 0
+}
+
+### POST register already registered user
+POST localhost:8081/user/register
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "registered",
+  "email": "different@user.com",
+  "password": "passsssss",
+  "moneySpent": 0
+}

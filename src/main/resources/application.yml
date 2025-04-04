@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: "user-service"
+
+server:
+  port: 8081
+
+mongodb:
+  connectionUri: "mongodb://Jaroslav:qwerty@localhost:27017/microservicesPractice"
+  database: "user"
+  autoIndexCreation: true
+  collections:
+    user: "user"
+  maxWaitTime: '1000'
