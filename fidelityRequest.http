@@ -1,0 +1,9 @@
+### POST add new user
+POST localhost:8082/fidelity/addUser
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "registered2",
+  "moneySpent": 0
+}

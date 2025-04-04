@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "fidelity-service"
+
+server:
+  port: 8082
+
+mongodb:
+  connectionUri: "mongodb://Jaroslav:qwerty@localhost:27017/microservicesPractice"
+  database: "fidelity"
+  maxWaitTime: '1000'
