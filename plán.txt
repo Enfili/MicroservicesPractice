@@ -1,6 +1,26 @@
-1. mohol by som v Dockeri spraviť frontend, do ktorého dám potom tie veci, kde si budú ľudia objednávať možné produkty
-	. a budeš tam mať aj prihlásenie? a registráciu?
-	
+PO DOVOLENKE:
+PONDELOK A UTOROK
+. môžem sa opýtať na tú stránku, či budem vedieť niekam nahodiť servisy
+. hlavne sa skús pripraviť na ten pohovor
+
+1. PROJEKT
+	> skús si to nahodiť cez cicd gitlab na nejakú stránku
+		~ musíš zistiť, že na akú (či firma má niečo, kam by som to mohol nahodiť)
+	> ak sa ti to podarí nahodiť cez gitlab, tak asi musíš vytvoriť nejakú MongoDB online pre tie ostatné servisy (pre product-service už máš)
+2. prečítaj si Java knihu
+3. prečítaj si Spring Boot knihu
+4. môžem skúsiť pridať nejaké iné technológie do projektu
+	> je tam asi aj nejaká funkcionalita, čo môžeš dorobiť (mám tam nejaké todo veci)
+	> prehoď názvy a také veci do application.yml, ak sa dá a do nejakých konštánt
+	> dorob security (pridaj JWT)
+	> dopíš testy
+	> nikde nevraciam cenu nákupu, to by som mal ešte zmeniť
+	> pridaj viac produktov
+	> v user-service nepotrebuje user vedieť moneySpent
+	> ešte keby som vedel vytvoriť kolekciu v MongoDB, ktorá by mala taký názov ako chcem
+	> swagger?
+	> docker?
+5. dúfam, že budem mať udemy a môžem si pozerať Tima Buchalku asi
 	
 PROJEKT
 . aspoň dva mikroservisy, lepšie tri
@@ -14,46 +34,32 @@ PROJEKT
 . skúsiš deployovať servisy cez Gitlab
 . skúsiš spraviť security na to
 	> musíš spraviť prihlásenie, registráciu
-. klasicky budeš mať:
-	> CONTROLLER:
-		~ budeš mať prístup z vonku cez requesty do hlavnej appky na nákup produktov
-		~ budeš mať na komunikáciu s ostatnými appkami
-	> SERVICE:
-		~ business logic
-		~ potrebuješ DAO a DTO?
-	> DATABASE:
-		~ 
-	> CONFIG:
-		~ databázy
-		~ servisy?
-	> DAO, DTO, MAPPERS?
-		~ asi použiješ
-	> CLIENT:
-		~ pri komunikácii medzi servismi?
 . swagger?
 
 . 1. SERVIS
 	> controller:
-		~ nákup s prihlásením
-		~ nákup bez prihlásenia
+		~ nákup s prihlásením - J
+		~ nákup bez prihlásenia - J
 	> service:
 		~ registrácia
 		~ spracuje sumu za nákup
 			+ prihlásený platí menej abo také dačo
 	> databáza:
-		~ postgresql: tovar
+		~ postgresql: tovar - J
 	> config:
-		~ databázy
+		~ databáza?
 		~ servisy?
-	> budeš asi potrebovať mappery a dao a dto?
+	> budeš asi potrebovať mappery a dao a dto? - J
 	> docker?
 	> sprav si pipelinu
-		~ aspoň takú základnú
+		~ aspoň takú základnú - J
+		~ ale neviem to zatiaľ nikam nahodiť na žiadne url
 	> neskôr:
 		~ clientov pre ostatné servisy
 		~ swagger specs napísané z ostatných servisov
 		~ aws spojenie
 	> napíš si testy
+		~ treba ich potom ešte upraviť, keď toho budeš mať viac
 	> swagger?
 		~ na spojenie s druhým servisom?
 		~ načo to potrebuješ? vygenerovanie nejakých tried, ktoré ti prídu z druhého servisu?
@@ -63,7 +69,8 @@ PROJEKT
 		~ config pre databázu (ak treba)
 		~ sprav pipelinu - TOTO ROBÍM
 			° sprav deploy na dev - TOTO MI ZATIAĽ NEJDE
-				+ musím si spraviť stránku - skús cez github pages
+				+ musím si spraviť stránku - skús cez github pages - to sú len statické stránky, potrebuješ dynamické
+				+ SKÚS SA OPÝTAŤ, ČI SA TAKÉ NIEČO DÁ CEZ FIRMU
 		~ choď na druhý servis a potom dorob 1. servis
 
 . 2. SERVIS
@@ -73,10 +80,17 @@ PROJEKT
 		~ registrácia
 	> databáza:
 		~ mongoDB: užívatelia
+		~ STÁLE SA VIEM PRIPOJIŤ AJ BEZ USERA A HESLA V CONNECTION URI
+		~ asi si pridaj DAO vrstvu (rozdelíš funkcionalitu zo servisnej vrstvy)
 	> budeš asi potrebovať mappery a dao a dto?
 	> docker?
 	> sprav si pipelinu
 		~ aspoň takú základnú
+	> security
+		~ pridaj JWT
+			° to asi treba spraviť špeci request na token a ten token potom použiješ v ďalšom requeste, ak tomu dobre rozumiem
+			° skús toto ešte premyslieť
+			° na projekte si mal na to špeci request, ale neviem, kde sa ti to generovalo
 	> neskôr:
 		~ clientov pre ostatné servisy
 		~ swagger specs napísané z ostatných servisov
@@ -93,6 +107,9 @@ PROJEKT
 		~ swagger specs napísané z ostatných servisov
 		~ aws spojenie?
 	> napíš si testy
+	> budeš databázu updatovať raz za deň/týždeň/hodinu (samozrejme, že to nie je ideálne)?
+		~ budeš ťahať dáta z databázy z 1. servisu cez nejakú scheduler?
+	> usera v tomto servise by si asi tiež mal vygenerovať cez swagger z prvého servisu, nie?
 
 . TECHNOLÓGIE:
 	> Java

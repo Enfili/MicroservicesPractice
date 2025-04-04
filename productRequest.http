@@ -1,5 +1,5 @@
-### POST add new product
-POST http://localhost:8080/addProduct
+
+POST http://localhost:8080/product/addProduct
 Content-Type: application/json
 
 {
@@ -8,10 +8,40 @@ Content-Type: application/json
   "price": 12.3
 }
 
+### POST add new product
+POST http://localhost:8080/product/addProduct
+Content-Type: application/json
+
+{
+"name": "Apollo",
+"description": "Moon spacecraft with human in it.",
+"price": 12.9
+}
+
+### POST add new product
+POST http://localhost:8080/product/addProduct
+Content-Type: application/json
+
+{
+"name": "Space Shuttle",
+"description": "Airplane in space.",
+"price": 23.3
+}
+
+### POST add new product
+POST http://localhost:8080/product/addProduct
+Content-Type: application/json
+
+{
+"name": "Dragon",
+"description": "Dragon comes back.",
+"price": 1.0
+}
+
 ### DELETE by id
-DELETE http://localhost:8080/deleteProductById?id=4
+DELETE http://localhost:8080/product/deleteProductById?id=4
 Content-Type: application/json
 
 ### DELETE duplicates
-DELETE http://localhost:8080/deleteDuplicates?name=Vostok
+DELETE http://localhost:8080/product/deleteDuplicates?name=Vostok
 Content-Type: application/json
