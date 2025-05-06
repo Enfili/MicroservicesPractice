@@ -6,6 +6,6 @@ server:
   port: 8081
 
 mongodb:
-  connectionUri: "mongodb://Jaroslav:qwerty@localhost:27017"
+  connectionUri: "mongodb://Jaroslav:qwerty@localhost:27017/microservicesPractice"
   database: "microservicesPractice"
   collection: "user"

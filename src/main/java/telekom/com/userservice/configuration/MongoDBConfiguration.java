@@ -1,6 +1,7 @@
 package telekom.com.userservice.configuration;
 
 import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoClientSettings.Builder;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -17,7 +18,6 @@ import java.util.concurrent.TimeUnit;
 import static com.mongodb.MongoClientSettings.builder;
 
 @Configuration
-@RequiredArgsConstructor
 public class MongoDBConfiguration {
 
     @Value("${mongodb.connectionUri}")
@@ -31,24 +31,25 @@ public class MongoDBConfiguration {
 
     @Bean
     public MongoClient mongoClient() {
-        Builder mongoClientSettings = builder()
+        MongoClientSettings mongoClientSettings = builder()
                 .applyConnectionString(new ConnectionString(connectionUri))
                 .applyToSocketSettings(builder -> builder
                         .applySettings(SocketSettings.builder().connectTimeout(10000, TimeUnit.MILLISECONDS).build()))
                 .applyToConnectionPoolSettings(builder -> builder
-                        .maxWaitTime(1000, TimeUnit.MILLISECONDS));
+                        .maxWaitTime(1000, TimeUnit.MILLISECONDS))
+                .build();
 
-        return MongoClients.create(mongoClientSettings.build());
+        return MongoClients.create(mongoClientSettings);
     }
 
     @Bean
     public MongoTemplate mongoTemplate(@Autowired MongoClient mongoClient) {
-        MongoTemplate template = new MongoTemplate(mongoClient, database);
-
-        if (!template.collectionExists(collection)) {
-            template.createCollection(collection);
-        }
-
-        return template;
+        return new MongoTemplate(mongoClient, database);
+//
+//        if (!template.collectionExists(collection)) {
+//            template.createCollection(collection);
+//        }
+//
+//        return template;
     }
 }

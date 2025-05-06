@@ -8,8 +8,8 @@ POST localhost:8081/user/register
 Content-Type: application/json
 
 {
-  "id": 2,
-  "name": "registered2",
+  "id": 4,
+  "name": "registered4",
   "email": "reg@user.com",
   "password": "password",
   "moneySpent": 0
